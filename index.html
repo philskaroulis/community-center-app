@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" ng-app="RiverStationApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>My AngularJS App</title>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+
+<body>
+
+
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- VIEW CONTAINER -->
+
+    <div ng-view></div>
+
+
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- SCRIPTS -->
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+
+
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- TEMPLATES -->
+
+    <!-- #/ -->
+    <script type="text/ng-template" id="home.html">
+        <p>This is the partial for view 1.</p>
+    </script>
+
+    <!-- #/login -->
+    <script type="text/ng-template" id="login.html">
+        <p>login</p>
+    </script>
+
+    <!-- #/content -->
+    <script type="text/ng-template" id="content.html">
+        <p>content</p>
+    </script>
+
+    <!-- #/events -->
+    <script type="text/ng-template" id="events.html">
+        <p>events</p>
+    </script>
+
+    <!-- #/artists -->
+    <script type="text/ng-template" id="artists.html">
+        <p>artists</p>
+    </script>
+
+    <!-- #/links -->
+    <script type="text/ng-template" id="links.html">
+        <p>links</p>
+    </script>
+
+
+
+</body>
+</html>
