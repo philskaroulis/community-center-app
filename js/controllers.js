@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('RiverStationApp.controllers', [])
+angular.module('CommunityCenterApp.controllers', [])
 .controller('HomeCtrl', [function() {
     console.log('HomeCtrl');
 }])

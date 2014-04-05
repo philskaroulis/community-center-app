@@ -2,12 +2,12 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('RiverStationApp', [
+angular.module('CommunityCenterApp', [
     'ngRoute',
-    'RiverStationApp.filters',
-    'RiverStationApp.services',
-    'RiverStationApp.directives',
-    'RiverStationApp.controllers'
+    'CommunityCenterApp.filters',
+    'CommunityCenterApp.services',
+    'CommunityCenterApp.directives',
+    'CommunityCenterApp.controllers'
 ])
 .config(['$routeProvider', function($routeProvider) {
 
