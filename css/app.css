@@ -1,6 +1,7 @@
 /* app css stylesheet */
 
-.headline {
+
+.cc-headline {
   color: #2980b9;
   font: 700 118px/1.1 "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   margin-bottom: 50px;
@@ -9,12 +10,52 @@
   text-align: center;
   word-wrap: break-word;
 }
+.cc-row {
+  margin: 0 auto;
+  padding: 0 20px 50px;
+  width: 940px;
+}
+.cc-row:before,
+.cc-row:after {
+  content: " ";
+  display: table;
+}
+.cc-row:after {
+  clear: both;
+}
 
 
-
+.cc-title {
+  float: left;
+  /*margin: -0.5em 20px 0;*/
+  margin: 0 20px;
+  width: 240px;
+  font: 700 24.5px/40px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cc-title h1,
+.cc-title h2,
+.cc-title h3,
+.cc-title h4 {
+  margin-top: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cc-title h1,
+.cc-title h2,
+.cc-title h3 {
+  line-height: 40px !important;
+}
+.cc-title h3 {
+  font-size: 24.5px !important;
+}
+.cc-title small {
+  color: #c0c1c2;
+  font-size: 13px;
+  font-weight: 400;
+}
 
 
 /* ========  */
+
 
 .dropdown-arrow-inverse {
   border-bottom-color: #34495e !important;
@@ -29,25 +70,8 @@
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-.demo-row {
-  margin: 0 auto;
-  padding: 0 20px 50px;
-  width: 940px;
-}
-.demo-row:before,
-.demo-row:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.demo-row:after {
-  clear: both;
-}
-.demo-row .demo-heading-note,
-.demo-row .demo-text-note {
+.cc-row .cc-heading-note,
+.cc-row .cc-text-note {
   display: block;
   width: 260px;
   position: absolute;
@@ -58,55 +82,55 @@
   color: #c0c1c2;
   font-weight: 400;
 }
-.demo-row .demo-text-note {
+.cc-row .cc-text-note {
   bottom: auto;
   top: 10px;
 }
-.demo-row.menu-row {
+.cc-row.menu-row {
   padding: 50px 20px 10px;
 }
-.demo-row.typography-row .demo-content {
+.cc-row.typography-row .cc-content {
   float: none;
   margin-left: 20px;
   padding-top: 0;
   width: auto;
   clear: both;
 }
-.demo-row.typography-row .demo-type-example {
+.cc-row.typography-row .cc-type-example {
   padding-left: 265px;
   margin-bottom: 40px;
   position: relative;
 }
-.demo-col {
+.cc-col {
   float: left;
   margin: 0 20px;
   width: 270px;
 }
-.demo-content {
+.cc-content {
   float: left;
   margin-left: 20px;
   width: 580px;
 }
-.demo-content.demo-content-article {
+.cc-content.cc-content-article {
   font-size: 24px;
 }
-.demo-content.demo-content-article p {
+.cc-content.cc-content-article p {
   margin-bottom: 20px;
 }
-.demo-content.demo-content-article ul {
+.cc-content.cc-content-article ul {
   list-style-type: none;
   margin-left: 0;
 }
-.demo-content.demo-content-article li {
+.cc-content.cc-content-article li {
   line-height: 35px;
   padding: 0 0 5px;
 }
-.demo-content-wide {
+.cc-content-wide {
   clear: both;
   margin: 0 20px;
 }
-.demo-content-wide:before,
-.demo-content-wide:after {
+.cc-content-wide:before,
+.cc-content-wide:after {
   content: " ";
   /* 1 */
 
@@ -114,90 +138,64 @@
   /* 2 */
 
 }
-.demo-content-wide:after {
+.cc-content-wide:after {
   clear: both;
 }
-.demo-title {
-  float: left;
-  margin: -0.5em 20px 0;
-  width: 240px;
-  font: 700 24.5px/40px "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.demo-title h1,
-.demo-title h2,
-.demo-title h3,
-.demo-title h4 {
-  margin-top: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.demo-title h1,
-.demo-title h2,
-.demo-title h3 {
-  line-height: 40px !important;
-}
-.demo-title h3 {
-  font-size: 24.5px !important;
-}
-.demo-title small {
-  color: #c0c1c2;
-  font-size: 13px;
-  font-weight: 400;
-}
-.demo-buttons .btn,
-.demo-inputs .control-group {
+.cc-buttons .btn,
+.cc-inputs .control-group {
   margin-bottom: 20px;
 }
-.demo-navigation .demo-title {
+.cc-navigation .cc-title {
   margin-top: 10px;
 }
-.demo-pager {
+.cc-pager {
   margin-top: -10px;
 }
-.demo-tooltips {
+.cc-tooltips {
   height: 100px;
 }
-.demo-tooltips .tooltip {
+.cc-tooltips .tooltip {
   left: -8px !important;
   position: relative !important;
   top: -8px !important;
 }
-.demo-tooltips .tooltip-inner {
+.cc-tooltips .tooltip-inner {
   max-width: 100%;
   width: auto;
 }
-.demo-popovers .popover {
+.cc-popovers .popover {
   display: block;
   margin: 0 13px 0 -3px;
   position: relative;
   width: auto;
 }
-.demo-social-buttons .btn {
+.cc-social-buttons .btn {
   clear: left;
   float: left;
   margin-bottom: 17px;
 }
-.demo-headings {
+.cc-headings {
   margin-bottom: 12px;
 }
-.demo-tiles {
+.cc-tiles {
   margin-bottom: 46px;
 }
-.demo-icons {
+.cc-icons {
   font-size: 32px;
   margin-left: -15px;
 }
-.demo-icons > span {
+.cc-icons > span {
   display: inline-block;
   margin: 0 0 32px 35px;
   width: 32px;
 }
 @media (max-width: 480px) {
-  .demo-icons > span {
+  .cc-icons > span {
     margin-left: 16px;
     margin-right: 16px;
   }
 }
-.demo-icons-tooltip {
+.cc-icons-tooltip {
   bottom: 0;
   color: #c2c8cf;
   font-size: 12px;
@@ -206,28 +204,28 @@
   position: absolute;
   width: 80px;
 }
-.demo-inline {
+.cc-inline {
   display: inline-block;
 }
-.demo-labels {
+.cc-labels {
   font-size: 25px;
 }
-.demo-labels .visible-lg {
+.cc-labels .visible-lg {
   display: inline !important;
 }
 @media (max-width: 767px) {
-  .demo-labels .visible-lg {
+  .cc-labels .visible-lg {
     display: none !important;
   }
 }
-.demo-illustrations {
+.cc-illustrations {
   margin-top: 40px;
 }
-.demo-illustrations .demo-content-wide {
+.cc-illustrations .cc-content-wide {
   margin: 0 0 0 -66px;
   padding-top: 20px;
 }
-.demo-illustrations .demo-content-wide > div {
+.cc-illustrations .cc-content-wide > div {
   float: left;
   width: 100px;
   height: 100px;
@@ -236,16 +234,16 @@
   text-align: center;
   vertical-align: middle;
 }
-.demo-illustrations img {
+.cc-illustrations img {
   display: inline-block;
   max-height: 100px;
   max-width: 100px;
   vertical-align: middle;
 }
-.demo-dialog {
+.cc-dialog {
   padding: 13px 20px 15px;
 }
-.demo-dialog .flat {
+.cc-dialog .flat {
   width: 300px;
 }
 .static-modal-backdrop {
@@ -285,7 +283,7 @@
 .components-static-modal .modal-dialog {
   padding: 0;
 }
-.demo-sidebar {
+.cc-sidebar {
   font-size: 14px;
   line-height: 1.214;
   height: 100%;
@@ -302,64 +300,64 @@
   -webkit-backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
-.demo-sidebar li:first-child a {
+.cc-sidebar li:first-child a {
   padding-top: 20px;
 }
-.demo-sidebar a {
+.cc-sidebar a {
   display: block;
   padding: 7px 20px;
 }
 @media (max-width: 767px) {
-  .demo-row {
+  .cc-row {
     margin-bottom: 0;
     margin-left: 0;
     padding-left: 0;
     padding-right: 0;
     width: auto;
   }
-  .demo-col,
-  .demo-content,
-  .demo-content-wide,
-  .demo-title {
+  .cc-col,
+  .cc-content,
+  .cc-content-wide,
+  .cc-title {
     float: none;
     margin: 0 0 18px !important;
     padding: 0 !important;
     width: auto;
   }
-  .demo-headline {
+  .cc-headline {
     font-size: 65px !important;
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
   }
-  .demo-inline {
+  .cc-inline {
     display: block;
   }
-  .demo-navigation .btn-toolbar {
+  .cc-navigation .btn-toolbar {
     margin: 0;
   }
-  .demo-navigation .pager {
+  .cc-navigation .pager {
     display: block;
     margin-left: 0 !important;
     margin-bottom: 20px;
   }
-  .typography-row .demo-type-example {
+  .typography-row .cc-type-example {
     padding-left: 0 !important;
   }
-  .typography-row .demo-heading-note,
-  .typography-row .demo-text-note {
+  .typography-row .cc-heading-note,
+  .typography-row .cc-text-note {
     position: static !important;
     margin: 0 0 10px;
   }
-  .demo-illustrations .demo-content-wide > div {
+  .cc-illustrations .cc-content-wide > div {
     margin-left: 67px;
   }
 }
 @media (max-width: 480px) {
-  .demo-illustrations .demo-content-wide > div {
+  .cc-illustrations .cc-content-wide > div {
     margin-left: 23px;
   }
-  .demo-navigation .mll.pvl {
+  .cc-navigation .mll.pvl {
     padding: 0;
     margin-left: 0 !important;
     margin-bottom: 20px;
