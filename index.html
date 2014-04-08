@@ -23,8 +23,8 @@
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <!-- VIEW CONTAINER -->
 
-    <div ng-view></div>
-
+    <h1 class="cc-headline">Community Center</h1>
+    <div class="container" ng-view></div>
 
 
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
@@ -46,14 +46,12 @@
     <script src="js/ng/angular.min.js"></script>
     <script src="js/ng/angular-route.min.js"></script>
 
-    <!--
+    <script src="js/app/app.js"></script>
     <script src="js/app/factories.js"></script>
     <script src="js/app/services.js"></script>
     <script src="js/app/filters.js"></script>
     <script src="js/app/directives.js"></script>
     <script src="js/app/controllers.js"></script>
-    -->
-    <script src="js/app/app.js"></script>
 
 
 
@@ -63,16 +61,108 @@
     <!-- #/ -->
     <script type="text/ng-template" id="home.html">
 
-        <h1 class="cc-headline">Community Center</h1>
+        <!-- WELCOME -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/welcome">Welcome</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+                <div ng-bind-html="welcome"></div>
+            </div>
+        </div>
 
-        <div class="container">
-
-            <div class="cc-row">
-                <div class="cc-title">
-                    <h3>{{ welcome.title }}</h3>
+        <!-- EVENTS -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/events">Events</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+                <div ng-repeat="event in events" >
+                    <div>{{event.title}}</div>
+                    <div>{{event.when}}</div>
+                    <div>{{event.body}}</div>
+                    <div>{{event.link}}</div>
                 </div>
-                <div class="cc-content cc-content-article">
-                    <div ng-bind-html="welcome.body"></div>
+            </div>
+        </div>
+
+        <!-- INTRODUCTIONS -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/intros">Introductions</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+                <div ng-repeat="introduction in introductions" >
+                    <div>{{introduction.title}}</div>
+                    <div>{{introduction.when}}</div>
+                    <div>{{introduction.body}}</div>
+                    <div>{{introduction.link}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HSTORY -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/history">History</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+                <div ng-bind-html="history.body"></div>
+            </div>
+        </div>
+
+        <!-- LINKS -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/links">Interesting Links</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+                <div ng-repeat="link in links" >
+                    <div>{{link.title}}</div>
+                    <div>{{link.when}}</div>
+                    <div>{{link.body}}</div>
+                    <div>{{link.link}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/contact">Contact</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+            </div>
+        </div>
+
+    </script>
+
+
+    <!-- #/login -->
+    <script type="text/ng-template" id="login.html">
+
+        <div class="cc-row">
+
+            <div class="cc-title">
+                <h3>Login</h3>
+                <br>
+                <small><a href="#/"> <span class="glyphicon glyphicon-chevron-left"></span> Return home</a></small>
+            </div>
+
+            <div class="cc-content cc-content-article">
+                <div class="login-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="login-name">
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass">
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+
+                    <a class="btn btn-primary btn-lg btn-block" href="#">Login</a>
+                    <a class="login-link" href="#">Lost your password?</a>
                 </div>
             </div>
 
@@ -80,39 +170,147 @@
 
     </script>
 
-    <!-- #/login -->
-    <script type="text/ng-template" id="login.html">
-        <p>login</p>
-    </script>
 
     <!-- #/welcome -->
     <script type="text/ng-template" id="welcome.html">
-        <p>welcome</p>
+
+        <div class="cc-row">
+
+            <div class="cc-title">
+                <h3>Welcome section</h3>
+                <br>
+                <small><a href="#/"> <span class="glyphicon glyphicon-chevron-left"></span> Return home</a></small>
+            </div>
+
+            <div class="cc-content cc-content-article">
+                <form role="form">
+                    <div class="form-group">
+                        <textarea ng-model="welcome" rows="10" class="form-control" placeholder="Welcome body"></textarea>
+                    </div>
+                    <a ng-click="update()" href="#" class="btn btn-block btn-lg btn-info">Save</a>
+                </form>
+            </div>
+
+        </div>
+
     </script>
 
-    <!-- #/history -->
-    <script type="text/ng-template" id="history.html">
-        <p>history</p>
-    </script>
-
-    <!-- #/contact -->
-    <script type="text/ng-template" id="contact.html">
-        <p>contact</p>
-    </script>
 
     <!-- #/events -->
     <script type="text/ng-template" id="events.html">
-        <p>events</p>
+
+        <div class="cc-row">
+
+            <div class="cc-title">
+                <h3>Events section</h3>
+                <br>
+                <small><a href="#/"> <span class="glyphicon glyphicon-chevron-left"></span> Return home</a></small>
+            </div>
+
+            <div class="cc-content cc-content-article">
+                <form role="form">
+                    <div ng-show="formVisible">
+                        <div class="form-group">
+                            <input ng-model="template.when" type="text" value="" placeholder="When" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="template.title" type="text" value="" placeholder="Title" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <textarea ng-model="template.body" rows="10" class="form-control" placeholder="Body"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="template.link" type="text" value="" placeholder="Link" class="form-control" />
+                        </div>
+                        <a ng-click="save();formVisible=false;" href="" class="btn btn-block btn-lg btn-info">Save</a>
+                    </div>
+                </form>
+
+                <div ng-repeat="event in events.list">
+                    <hr>
+                    <div>
+                            <strong>id:</strong> {{ event.id }}
+                            <span class="pull-right">
+                                <a ng-click="update()" href="#"> <span class="glyphicon glyphicon-pencil"></span></a>
+                                <a ng-click="delete()" href="#"> <span class="glyphicon glyphicon-remove"></span></a>
+                            </span>
+                    </div>
+                    <div><strong>when:</strong> {{ event.when }}</div>
+                    <div><strong>title:</strong> {{ event.title }}</div>
+                    <div><strong>body:</strong> {{ event.body }}</div>
+                </div>
+
+                <!--<table class="table table-hover">-->
+                    <!--<thead>-->
+                        <!--<tr>-->
+                            <!--<th>id</th>-->
+                            <!--<th>when</th>-->
+                            <!--<th>title</th>-->
+                            <!--<th>body</th>-->
+                            <!--<th></th>-->
+                        <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                        <!--<tr ng-repeat="event in events">-->
+                            <!--<td>{{ event.id }}</td>-->
+                            <!--<td>{{ event.when }}</td>-->
+                            <!--<td>{{ event.title }}</td>-->
+                            <!--<td>{{ event.body }}</td>-->
+                            <!--<td>-->
+                                <!--<a ng-click="update()" href="#"> <span class="glyphicon glyphicon-pencil"></span></a>-->
+                                <!--<a ng-click="delete()" href="#"> <span class="glyphicon glyphicon-remove"></span></a>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+            </div>
+
+        </div>
+
     </script>
 
-    <!-- #/introductions -->
-    <script type="text/ng-template" id="introductions.html">
-        <p>introductions</p>
+
+    <!-- #/history -->
+    <script type="text/ng-template" id="history.html">
+
+        <div class="cc-row">
+
+            <div class="cc-title">
+                <h3>History section</h3>
+                <br>
+                <small><a href="#/"> <span class="glyphicon glyphicon-chevron-left"></span> Return home</a></small>
+            </div>
+
+            <div class="cc-content cc-content-article">
+                <form role="form">
+                    <div class="form-group">
+                        <textarea ng-model="welcome" rows="10" class="form-control" placeholder="History body"></textarea>
+                    </div>
+                    <a ng-click="update()" href="#" class="btn btn-block btn-lg btn-info">Save</a>
+                </form>
+            </div>
+
+        </div>
+
     </script>
 
-    <!-- #/links -->
-    <script type="text/ng-template" id="links.html">
-        <p>links</p>
+
+    <!-- #/contact -->
+    <script type="text/ng-template" id="contact.html">
+
+        <div class="cc-row">
+
+            <div class="cc-title">
+                <h3>Contact section</h3>
+                <br>
+                <small><a href="#/"> <span class="glyphicon glyphicon-chevron-left"></span> Return home</a></small>
+            </div>
+
+            <div class="cc-content cc-content-article">
+            </div>
+
+        </div>
+
     </script>
 
 
