@@ -7,6 +7,10 @@ ccApp
     $scope.welcome = $sce.trustAsHtml(WelcomeFactory.read());
     $scope.events = EventsFactory.read();
 
+
+
+
+
 })
 
 .controller( 'WelcomeCtrl', function WelcomeCtrl ( $scope, WelcomeFactory ) {
@@ -25,8 +29,7 @@ ccApp
 
     $scope.template = EventsFactory.getClear().list[0];
 
-    $scope.events = EventsFactory.getClear();
-//    $scope.events = EventsFactory.read();
+    $scope.events = EventsFactory.read();
 
     $scope.create = function () {
         EventsFactory.create($scope.template);

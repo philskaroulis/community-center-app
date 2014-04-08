@@ -54,6 +54,41 @@
 }
 
 
+
+/* events */
+span.glyphicon {
+    font-size: smaller;
+}
+
+.event-container {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #999;
+}
+.event-when {
+    color: #888;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+.event-actions a {
+    margin-left: 10px;
+}
+.event-title {
+}
+.event-body {
+    margin-bottom: 20px;
+}
+.event-link {
+    font-size: 15px !important;
+    text-transform: uppercase;
+}
+.event-top-row:after {
+    clear: both;
+}
+
+
 /* ========  */
 
 

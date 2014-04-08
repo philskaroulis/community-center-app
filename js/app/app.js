@@ -59,7 +59,7 @@ var ccApp = angular.module( 'ccApp', [
 
     $routeProvider.when('/login', {templateUrl: 'login.html', controller: 'LoginCtrl'});
 
-    $routeProvider.when('/welcome', {templateUrl: 'welcome.html', controller: 'WelcomeCtrl', resolve: {loggedin: checkLoggedin} });
+    $routeProvider.when('/welcome/edit', {templateUrl: 'welcome.html', controller: 'WelcomeCtrl', resolve: {loggedin: checkLoggedin} });
 
     $routeProvider.when('/history', {templateUrl: 'history.html', controller: 'HistoryCtrl', resolve: {loggedin: checkLoggedin}});
 
