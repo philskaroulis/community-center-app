@@ -31,17 +31,8 @@ ccApp
 
     // private
     var data = [];
-    var init = [
-            {
-                id:'',
-                when:'',
-                title:'',
-                body:'',
-                link:''
-            }
-        ];
+    var init = {id:'',when:'',title:'',body:'',link:''};
 
-        
     data.push({
                 id:data.length+1,
                 when:'Mon Apr 8, 6:00pm',
@@ -83,6 +74,9 @@ ccApp
         clear: function(){
             data = init;
             return data;
+        },
+        getEmpty: function(){
+            return init;
         },
         read: function(){
             return data;

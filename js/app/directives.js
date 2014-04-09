@@ -54,7 +54,7 @@ ccApp
                             '<input ng-model="newEvent.link" type="text" value="" placeholder="Link" class="form-control" />' +
                         '</div>' +
                         '<div class="form-group">' +
-                            '<a ng-click="save(newEvent);formVisible=false;" href="" class="btn btn-block btn-sm btn-info">Save</a>' +
+                            '<a ng-click="onCreate();formVisible=false;" href="" class="btn btn-block btn-sm btn-info">Create</a>' +
                         '</div>' +
                     '</div>'+
                     '<div ng-repeat="event in data">' +
@@ -88,7 +88,7 @@ ccApp
                                 '<input ng-model="event.link" type="text" value="" placeholder="Link" class="form-control" />' +
                             '</div>' +
                             '<div class="form-group">' +
-                                '<a ng-click="save();event.formVisible=false;" href="" class="btn btn-block btn-sm btn-info">Save</a>' +
+                                '<a ng-click="onUpdate();event.formVisible=false;" href="" class="btn btn-block btn-sm btn-info">Update</a>' +
                             '</div>' +
                         '</div>'+
                     '</div>'+
@@ -98,14 +98,16 @@ ccApp
             data: '='
         },
         link: function(scope) {
-            scope.save = function (newEvent) {
-                scope.data = EventsFactory.create(newEvent);
-            }
+            scope.onCreate = function () {
+                scope.data = EventsFactory.create(scope.newEvent);
+                scope.newEvent = {};
+            };
             scope.onRemove = function(event) {
-                console.log(scope.data);
                 scope.data = EventsFactory.remove(event);
-                console.log(scope.data);
+            };
+            scope.onUpdate = function () {
+                scope.newEvent = {};
             };
         }
     };
-})
+});
