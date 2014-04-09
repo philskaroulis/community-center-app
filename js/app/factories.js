@@ -84,31 +84,20 @@ ccApp
             data = init;
             return data;
         },
-        getClear: function(){
-            return init;
-        },
-        getEvent: function(id){
-            var event = {};
-            for (var i=0; i<data.length; i++) {
-                if (data[i].id = id) {
-                    event = data[i];
-                }
-            }
-            return event;
-        },
         read: function(){
             return data;
         },
         create: function(eventData){
-            data = eventData;
+            data.push(eventData);
             return data;
         },
-        update: function(eventData){
-            data = eventData;
+        remove: function(eventData){
+            for (var i=0; i<data.length; i++ ){
+                if (data[i].id === eventData.id){
+                    data.splice(i,1);
+                }
+            }
             return data;
-        },
-        delete: function(eventData){
-            return true;
         }
     }
 
