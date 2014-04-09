@@ -2,7 +2,8 @@
 
 
 var ccApp = angular.module( 'ccApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngSanitize'
 ])
 
 .config( function ccAppConfig ( $routeProvider, $httpProvider ) {
@@ -58,18 +59,6 @@ var ccApp = angular.module( 'ccApp', [
     $routeProvider.when('/', {templateUrl: 'home.html', controller: 'HomeCtrl'});
 
     $routeProvider.when('/login', {templateUrl: 'login.html', controller: 'LoginCtrl'});
-
-    $routeProvider.when('/welcome/edit', {templateUrl: 'welcome.html', controller: 'WelcomeCtrl', resolve: {loggedin: checkLoggedin} });
-
-    $routeProvider.when('/history', {templateUrl: 'history.html', controller: 'HistoryCtrl', resolve: {loggedin: checkLoggedin}});
-
-    $routeProvider.when('/contact', {templateUrl: 'contact.html', controller: 'ContactCtrl', resolve: {loggedin: checkLoggedin}});
-
-    $routeProvider.when('/events', {templateUrl: 'events.html', controller: 'EventsCtrl', resolve: {loggedin: checkLoggedin}});
-
-    $routeProvider.when('/introductions', {templateUrl: 'introductions.html', controller: 'IntroductionsCtrl', resolve: {loggedin: checkLoggedin}});
-
-    $routeProvider.when('/links', {templateUrl: 'links.html', controller: 'LinksCtrl', resolve: {loggedin: checkLoggedin}});
 
     $routeProvider.otherwise({redirectTo: '/'});
 

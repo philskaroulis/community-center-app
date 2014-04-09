@@ -398,3 +398,27 @@ span.glyphicon {
     margin-bottom: 20px;
   }
 }
+
+.cc-form {
+    margin: 30px auto;
+    background-color: #edeff1;
+    padding: 24px 23px 20px;
+    position: relative;
+    border-radius: 6px;
+}
+.cc-form::before {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 0.8em solid transparent;
+	position: absolute;
+    left: 10%;
+    top: -34px;
+    border-bottom: 15px solid #edeff1;
+}
+
+.btn-sm {
+    width: 75px;
+    display: block;
+    margin: 0 auto;
+}

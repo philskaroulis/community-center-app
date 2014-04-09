@@ -8,6 +8,8 @@ ccApp
     // private
     var data = '';
 
+    data = 'We are transforming a 1918 car garage into a community space where people can meet, design, create &amp; sell art and enjoy indoor/outdoor special events &amp; festivals';
+
     // public
     return {
         clear: function(){
@@ -15,14 +17,10 @@ ccApp
             return data;
         },
         read: function(){
-            console.log('read');
-            console.log(data);
             return data;
         },
         update: function(freshData){
             data = freshData;
-            console.log('update');
-            console.log(data);
             return data;
         }
     }
