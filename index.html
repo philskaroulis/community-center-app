@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="en" ng-app="CommunityCenterApp">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Community Center</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/app.css" rel="stylesheet">
     <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="css/flat-ui.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -14,17 +13,18 @@
       <script src="js/various//html5shiv.js"></script>
       <script src="js/various/respond.min.js"></script>
     <![endif]-->
+    <link href="css/app.css" rel="stylesheet">
 </head>
 
-<body>
+<body ng-app="ccApp">
 
 
 
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
     <!-- VIEW CONTAINER -->
 
-    <div ng-view></div>
-
+    <h1 class="cc-headline">Community Center</h1>
+    <div class="container" ng-view></div>
 
 
     <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
@@ -45,12 +45,14 @@
 
     <script src="js/ng/angular.min.js"></script>
     <script src="js/ng/angular-route.min.js"></script>
+    <script src="js/ng/angular-sanitize.min.js"></script>
 
     <script src="js/app/app.js"></script>
+    <script src="js/app/factories.js"></script>
     <script src="js/app/services.js"></script>
-    <script src="js/app/controllers.js"></script>
     <script src="js/app/filters.js"></script>
     <script src="js/app/directives.js"></script>
+    <script src="js/app/controllers.js"></script>
 
 
 
@@ -59,38 +61,97 @@
 
     <!-- #/ -->
     <script type="text/ng-template" id="home.html">
-        <h1 class="headline">Getting started</h1>
+
+        <welcome data="welcome"></welcome>
+
+        <event-list data="events"></event-list>
 
 
+        <!-- INTRODUCTIONS -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/intros">Introductions</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+                <div ng-repeat="introduction in introductions" >
+                    <div>{{introduction.title}}</div>
+                    <div>{{introduction.when}}</div>
+                    <div>{{introduction.body}}</div>
+                    <div>{{introduction.link}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HSTORY -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/history">History</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+                <div ng-bind-html="history.body"></div>
+            </div>
+        </div>
+
+        <!-- LINKS -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/links">Interesting Links</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+                <div ng-repeat="link in links" >
+                    <div>{{link.title}}</div>
+                    <div>{{link.when}}</div>
+                    <div>{{link.body}}</div>
+                    <div>{{link.link}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="cc-row">
+            <div class="cc-title">
+                <h3><a href="#/contact">Contact</a></h3>
+            </div>
+            <div class="cc-content cc-content-article">
+            </div>
+        </div>
+
+        <a ng-click="update()" href="#" class="btn btn-block btn-lg btn-info">Save</a>
 
     </script>
+
 
     <!-- #/login -->
     <script type="text/ng-template" id="login.html">
-        <p>login</p>
+
+        <div class="cc-row">
+
+            <div class="cc-title">
+                <h3>Login</h3>
+                <br>
+                <small><a href="#/"> <span class="glyphicon glyphicon-chevron-left"></span> Return home</a></small>
+            </div>
+
+            <div class="cc-content cc-content-article">
+                <div class="login-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="login-name">
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass">
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+
+                    <a class="btn btn-primary btn-lg btn-block" href="#">Login</a>
+                    <a class="login-link" href="#">Lost your password?</a>
+                </div>
+            </div>
+
+        </div>
+
     </script>
-
-    <!-- #/content -->
-    <script type="text/ng-template" id="content.html">
-        <p>content</p>
-    </script>
-
-    <!-- #/events -->
-    <script type="text/ng-template" id="events.html">
-        <p>events</p>
-    </script>
-
-    <!-- #/artists -->
-    <script type="text/ng-template" id="artists.html">
-        <p>artists</p>
-    </script>
-
-    <!-- #/links -->
-    <script type="text/ng-template" id="links.html">
-        <p>links</p>
-    </script>
-
-
 
 </body>
 </html>

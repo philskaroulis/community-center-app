@@ -1,23 +1,14 @@
 'use strict';
 
-/* Controllers */
+ccApp
 
-angular.module('CommunityCenterApp.controllers', [])
-.controller('HomeCtrl', [function() {
-    console.log('HomeCtrl');
-}])
-.controller('LoginCtrl', [function() {
-    console.log('LoginCtrl');
-}])
-.controller('ContentCtrl', [function() {
-    console.log('ContentCtrl');
-}])
-.controller('EventsCtrl', [function() {
-    console.log('EventsCtrl');
-}])
-.controller('ArtistsCtrl', [function() {
-    console.log('ArtistsCtrl');
-}])
-.controller('LinksCtrl', [function() {
-    console.log('LinksCtrl');
-}]);
+.controller( 'HomeCtrl', function HomeCtrl ( $scope, WelcomeFactory, EventsFactory ) {
+
+//    $scope.welcome = $sce.trustAsHtml(WelcomeFactory.read());
+    $scope.welcome = WelcomeFactory.read();
+
+    $scope.events = EventsFactory.read();
+
+})
+
+;
